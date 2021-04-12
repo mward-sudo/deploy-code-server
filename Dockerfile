@@ -34,6 +34,12 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # -----------
 
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+RUN bash -i -c 'nvm install node'
+RUN bash -i -c 'npm install -g yarn'
+RUN git config --global user.name "Michael Ward"
+RUN git config --global user.email mward82@gmail.com
+
 # Port
 ENV PORT=8080
 
